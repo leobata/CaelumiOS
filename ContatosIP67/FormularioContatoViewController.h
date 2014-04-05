@@ -23,5 +23,6 @@
 - (Contato *)pegaDadosDoFormulario;
 - (IBAction)proximoCampo:(UITextField *)sender;
 - (id)initWithContato:(Contato *)contato;
+//BLABLABLA
 
 @end
