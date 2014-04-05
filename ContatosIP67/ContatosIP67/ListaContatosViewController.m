@@ -17,6 +17,8 @@
         self.navigationItem.title = @"Contatos";
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(exibeForm)];
         self.navigationItem.rightBarButtonItem = addButton;
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
+        self.linhaSelecionada = -1;
     }
     return self;
 }
@@ -24,8 +26,8 @@
 -(void) exibeForm
 {
     FormularioContatoViewController *form = [[FormularioContatoViewController alloc] init];
-    form.contatos = self.contatos;
-    
+    //form.contatos = self.contatos;
+    form.delegate = self;
     [self.navigationController pushViewController:form animated:YES];
 }
 
@@ -56,5 +58,48 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        [self.contatos removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    Contato *contato = self.contatos[sourceIndexPath.row];
+    [self.contatos removeObjectAtIndex:sourceIndexPath.row];
+    [self.contatos insertObject:contato atIndex:destinationIndexPath.row];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FormularioContatoViewController *form = [[FormularioContatoViewController alloc] initWithContato:[self.contatos objectAtIndex:indexPath.row]];
+    form.delegate = self;
+    [self.navigationController pushViewController:form animated:YES];
+}
+
+-(void)contatoAdicionado:(Contato *)contato
+{
+    self.linhaSelecionada = [self.contatos indexOfObject:contato];
+    [self.contatos addObject:contato];
+}
+
+-(void)contatoAlterado:(Contato *)contato
+{
+    self.linhaSelecionada = [self.contatos indexOfObject:contato];
+    NSLog(@"Contato:%@ foi alterado", contato);
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSIndexPath *_indexPath = [NSIndexPath indexPathForRow:self.linhaSelecionada inSection:0];
+    [self.tableView selectRowAtIndexPath:_indexPath animated:animated scrollPosition:UITableViewScrollPositionMiddle];
+    self.linhaSelecionada = -1;
 }
 @end

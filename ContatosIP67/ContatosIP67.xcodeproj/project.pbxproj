@@ -43,6 +43,7 @@
 		A593986D18E70A7400B30E59 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
 		A593986F18E73F7700B30E59 /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
 		A593987018E73F7700B30E59 /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
+		A5B8C7FF18F06A79001F8E7A /* FormularioContatoViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormularioContatoViewControllerDelegate.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				A593986718E6F51C00B30E59 /* FormularioContatoViewController.h */,
+				A5B8C7FF18F06A79001F8E7A /* FormularioContatoViewControllerDelegate.h */,
 				A593986818E6F51C00B30E59 /* FormularioContatoViewController.m */,
 				A593986F18E73F7700B30E59 /* ListaContatosViewController.h */,
 				A593987018E73F7700B30E59 /* ListaContatosViewController.m */,

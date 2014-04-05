@@ -27,7 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    if(self.contato){
+        self.nome.text = self.contato.nome;
+        self.telefone.text = self.contato.telefone;
+        self.email.text = self.contato.email;
+        self.endereco.text = self.contato.endereco;
+        self.site.text = self.contato.site;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,25 +53,27 @@
     return self;
 }
 
-- (void) criarContato
+- (void)criarContato
 {
     Contato *contato = [self pegaDadosDoFormulario];
-    [self.contatos addObject:contato];
-    
-    NSLog(@"Contatos adicionados: %@", self.contatos);
+    //[self.contatos addObject:contato];
+    [self.delegate contatoAdicionado:contato];
+    NSLog(@"Contato adicionado: %@", contato);
     [self.view endEditing:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (Contato *)pegaDadosDoFormulario
 {
-    Contato *contato = [[Contato alloc] init];
-    contato.nome = self.nome.text;
-    contato.endereco = self.endereco.text;
-    contato.telefone = self.telefone.text;
-    contato.email = self.email.text;
-    contato.site = self.site.text;
-    return contato;
+    if(!self.contato){
+        self.contato = [[Contato alloc] init];
+    }
+    self.contato.nome = self.nome.text;
+    self.contato.endereco = self.endereco.text;
+    self.contato.telefone = self.telefone.text;
+    self.contato.email = self.email.text;
+    self.contato.site = self.site.text;
+    return self.contato;
 }
 
 - (IBAction)proximoCampo:(UITextField *)sender
@@ -78,5 +86,27 @@
     else{
         [sender resignFirstResponder];
     }
+}
+- (id)initWithContato:(Contato *)contato
+{
+    self = [super init];
+    if(self){
+        self.contato = contato;
+        self.navigationItem.title = @"Alteração";
+        UIBarButtonItem *confirmButton = [[UIBarButtonItem alloc] initWithTitle:@"Confirma" style:UIBarButtonItemStylePlain target:self action:@selector(alterarContato)];
+        self.navigationItem.rightBarButtonItem = confirmButton;
+    }
+    
+    return self;
+}
+
+- (void)alterarContato
+{
+    [self pegaDadosDoFormulario];
+    if([self.delegate respondsToSelector:@selector(contatoAlterado:)])
+    {
+        [self.delegate contatoAlterado:self.contato];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Contato.h"
+#import "FormularioContatoViewControllerDelegate.h"
 
-@interface ListaContatosViewController : UITableViewController
+@interface ListaContatosViewController : UITableViewController <FormularioContatoViewControllerDelegate>
 
 @property (weak, atomic) NSMutableArray *contatos;
+@property (assign, atomic) NSInteger linhaSelecionada;
+-(void)contatoAdicionado:(Contato *)contato;
 
 @end
