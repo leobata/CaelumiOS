@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Contato.h"
 #import "FormularioContatoViewControllerDelegate.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ListaContatosViewController : UITableViewController <FormularioContatoViewControllerDelegate>
+@interface ListaContatosViewController : UITableViewController <FormularioContatoViewControllerDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
+{
+    Contato *contatoSelecionado;
+}
 
 @property (weak, atomic) NSMutableArray *contatos;
 @property (assign, atomic) NSInteger linhaSelecionada;

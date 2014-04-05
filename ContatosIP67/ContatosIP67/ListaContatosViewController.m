@@ -102,4 +102,95 @@
     [self.tableView selectRowAtIndexPath:_indexPath animated:animated scrollPosition:UITableViewScrollPositionMiddle];
     self.linhaSelecionada = -1;
 }
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UILongPressGestureRecognizer *lp = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(exibeMaisAcoes:)];
+    
+    [self.tableView addGestureRecognizer:lp];
+}
+-(void)exibeMaisAcoes:(UIGestureRecognizer *)gesture
+{
+    if(gesture.state == UIGestureRecognizerStateBegan){
+        CGPoint ponto = [gesture locationInView:self.tableView];
+        NSIndexPath *ip = [self.tableView indexPathForRowAtPoint:ponto];
+        Contato *contato = self.contatos[ip.row];
+        contatoSelecionado = contato;
+        UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:contato.nome delegate:self cancelButtonTitle:@"Cancela" destructiveButtonTitle:nil otherButtonTitles:@"Ligar",@"Enviar email",@"Mostrar mapa",@"Abrir site", nil];
+        [as showInView:self.view];
+    }
+}
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [self ligar];
+            break;
+        case 1:
+            [self enviarEmail];
+            break;
+        case 2:
+            [self mostrarMapa];
+            break;
+        case 3:
+            [self abrirSite];
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)ligar
+{
+    NSLog(@"Ligar para %@",contatoSelecionado.telefone);
+    UIDevice *device = [UIDevice currentDevice];
+    if([device.model isEqualToString:@"iPhone"]){
+        NSString *strUrl = [NSString stringWithFormat:@"tel:%@",contatoSelecionado.telefone];
+        [self abrirAplicativoComUrl:strUrl];
+    }
+    else{
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Este dispositivo não suporta ligações."delegate:nil cancelButtonTitle:@"Que saco" otherButtonTitles:nil];
+        [av show];
+    }
+}
+
+-(void)enviarEmail
+{
+    NSLog(@"Enviar email para %@",contatoSelecionado.email);
+    if([MFMailComposeViewController canSendMail]){
+        MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+        mailComposer.mailComposeDelegate = self;
+        [mailComposer setToRecipients:@[contatoSelecionado.email]];
+        [mailComposer setSubject:@"ContatosIP67"];
+        [self presentViewController:mailComposer animated:YES completion:nil];
+    }
+    else{
+        
+    }
+}
+
+-(void)mostrarMapa
+{
+    NSLog(@"Mostrar mapa em %@",contatoSelecionado.endereco);
+    NSString *strUrl = [[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@", contatoSelecionado.endereco] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self abrirAplicativoComUrl:strUrl];
+}
+
+-(void)abrirSite
+{
+    NSLog(@"Abrir site %@",contatoSelecionado.site);
+    [self abrirAplicativoComUrl:contatoSelecionado.site];
+}
+
+-(void)abrirAplicativoComUrl:(NSString *)strUrl
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:strUrl]];
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
