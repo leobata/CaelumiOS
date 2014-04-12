@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
-@interface Contato : NSObject <NSCoding>
+@interface Contato : NSObject <NSCoding, MKAnnotation>
 {
     NSString *_nome;
 }
@@ -17,5 +18,8 @@
 @property (strong, atomic) NSString *endereco;
 @property (strong, atomic) NSString *email;
 @property (strong, atomic) NSString *site;
+@property (strong, atomic) UIImage *foto;
+@property (strong, atomic) NSNumber *latitude;
+@property (strong, atomic) NSNumber *longitude;
 
 @end

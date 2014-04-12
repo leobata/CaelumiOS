@@ -19,6 +19,9 @@
         self.navigationItem.rightBarButtonItem = addButton;
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
         self.linhaSelecionada = -1;
+        
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:[UIImage imageNamed:@"lista-contatos.png"] tag:0];
+        self.tabBarItem = tabItem;
     }
     return self;
 }

@@ -33,6 +33,11 @@
         self.email.text = self.contato.email;
         self.endereco.text = self.contato.endereco;
         self.site.text = self.contato.site;
+        if (self.contato.foto){
+            [self.botaoFoto setImage:self.contato.foto forState:UIControlStateNormal];
+        }
+        self.latitude.text = [self.contato.latitude stringValue];
+        self.longitude.text = [self.contato.longitude stringValue];
     }
 }
 
@@ -73,20 +78,14 @@
     self.contato.telefone = self.telefone.text;
     self.contato.email = self.email.text;
     self.contato.site = self.site.text;
+    if (self.botaoFoto.imageView.image){
+        self.contato.foto = self.botaoFoto.imageView.image;
+    }
+    self.contato.latitude = [NSNumber numberWithDouble:[self.latitude.text doubleValue]];
+    self.contato.longitude = [NSNumber numberWithDouble:[self.longitude.text doubleValue]];
     return self.contato;
 }
 
-- (IBAction)proximoCampo:(UITextField *)sender
-{
-    NSInteger proximaTag = sender.tag+1;
-    UIResponder *proximoCampo = [self.view viewWithTag:proximaTag];
-    if(proximoCampo){
-        [proximoCampo becomeFirstResponder];
-    }
-    else{
-        [sender resignFirstResponder];
-    }
-}
 - (id)initWithContato:(Contato *)contato
 {
     self = [super init];
@@ -109,4 +108,43 @@
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+-(IBAction)selecionaFoto:(id)sender
+{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        
+    }
+    else{
+        UIImagePickerController *photoLibraryPicker = [[UIImagePickerController alloc] init];
+        photoLibraryPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        photoLibraryPicker.allowsEditing = YES;
+        photoLibraryPicker.delegate = self;
+        [self presentViewController:photoLibraryPicker animated:YES completion:nil];
+    }
+}
+
+-(IBAction)buscarCoordenadas:(id)sender
+{
+    self.botaoLocation.hidden = YES;
+    [self.rodinha startAnimating];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:self.endereco.text completionHandler:^(NSArray *resultados, NSError *erro){
+         if (!erro && [resultados count] > 0) {
+             CLPlacemark *resultado = resultados[0];
+             CLLocationCoordinate2D coordenada = resultado.location.coordinate;
+             self.latitude.text = [NSString stringWithFormat:@"%f", coordenada.latitude];
+             self.longitude.text = [NSString stringWithFormat:@"%f", coordenada.longitude];
+         }
+        [self.rodinha stopAnimating];
+        self.botaoLocation.hidden = NO;
+     }];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *img = info[UIImagePickerControllerEditedImage];
+    [self.botaoFoto setImage:img forState:UIControlStateNormal];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

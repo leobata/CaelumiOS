@@ -9,19 +9,25 @@
 #import <UIKit/UIKit.h>
 #import "Contato.h"
 #import "ListaContatosViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface FormularioContatoViewController : UIViewController
+@interface FormularioContatoViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nome;
 @property (weak, nonatomic) IBOutlet UITextField *telefone;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *endereco;
 @property (weak, nonatomic) IBOutlet UITextField *site;
 //@property (weak, atomic) NSMutableArray *contatos;
+@property (weak, nonatomic) IBOutlet UITextField *latitude;
+@property (weak, nonatomic) IBOutlet UITextField *longitude;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *rodinha;
 @property (weak, atomic) ListaContatosViewController *lista;
 @property (strong, atomic) Contato *contato;
 @property (weak, atomic) id<FormularioContatoViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *botaoFoto;
+@property (weak, nonatomic) IBOutlet UIButton *botaoLocation;
 - (Contato *)pegaDadosDoFormulario;
-- (IBAction)proximoCampo:(UITextField *)sender;
+-(IBAction)buscarCoordenadas:(id)sender;
 - (id)initWithContato:(Contato *)contato;
 //BLABLABLA
 

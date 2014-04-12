@@ -7,23 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CD27B5177174DE7830653FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADD664416374FBAA3426E59 /* libPods.a */; };
 		A593984B18E6F10600B30E59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A593984A18E6F10600B30E59 /* UIKit.framework */; };
 		A593984D18E6F10600B30E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A593984C18E6F10600B30E59 /* Foundation.framework */; };
 		A593984F18E6F10600B30E59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A593984E18E6F10600B30E59 /* CoreGraphics.framework */; };
 		A593985518E6F10600B30E59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A593985318E6F10600B30E59 /* InfoPlist.strings */; };
 		A593985718E6F10600B30E59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A593985618E6F10600B30E59 /* main.m */; };
 		A593985B18E6F10600B30E59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A593985A18E6F10600B30E59 /* AppDelegate.m */; };
-		A593985D18E6F10600B30E59 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A593985C18E6F10600B30E59 /* Default.png */; };
-		A593985F18E6F10600B30E59 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A593985E18E6F10600B30E59 /* Default@2x.png */; };
 		A593986118E6F10600B30E59 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A593986018E6F10600B30E59 /* Default-568h@2x.png */; };
 		A593986A18E6F51C00B30E59 /* FormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A593986818E6F51C00B30E59 /* FormularioContatoViewController.m */; };
 		A593986B18E6F51C00B30E59 /* FormularioContatoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A593986918E6F51C00B30E59 /* FormularioContatoViewController.xib */; };
 		A593986E18E70A7400B30E59 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = A593986D18E70A7400B30E59 /* Contato.m */; };
 		A593987118E73F7700B30E59 /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A593987018E73F7700B30E59 /* ListaContatosViewController.m */; };
+		A5AA5E2618F976CB00C3B6A4 /* ContatosNoMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AA5E2418F976CB00C3B6A4 /* ContatosNoMapaViewController.m */; };
+		A5AA5E2718F976CB00C3B6A4 /* ContatosNoMapaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E2518F976CB00C3B6A4 /* ContatosNoMapaViewController.xib */; };
+		A5AA5E2918F977AB00C3B6A4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AA5E2818F977AB00C3B6A4 /* MapKit.framework */; };
+		A5AA5E3318F97E7E00C3B6A4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E2A18F97E7E00C3B6A4 /* Default.png */; };
+		A5AA5E3418F97E7E00C3B6A4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E2B18F97E7E00C3B6A4 /* Default@2x.png */; };
+		A5AA5E3518F97E7E00C3B6A4 /* gps.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E2C18F97E7E00C3B6A4 /* gps.png */; };
+		A5AA5E3618F97E7E00C3B6A4 /* gps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E2D18F97E7E00C3B6A4 /* gps@2x.png */; };
+		A5AA5E3718F97E7E00C3B6A4 /* lista-contatos.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E2E18F97E7E00C3B6A4 /* lista-contatos.png */; };
+		A5AA5E3818F97E7E00C3B6A4 /* lista-contatos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E2F18F97E7E00C3B6A4 /* lista-contatos@2x.png */; };
+		A5AA5E3918F97E7E00C3B6A4 /* mapa-contatos.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E3018F97E7E00C3B6A4 /* mapa-contatos.png */; };
+		A5AA5E3A18F97E7E00C3B6A4 /* mapa-contatos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E3118F97E7E00C3B6A4 /* mapa-contatos@2x.png */; };
+		A5AA5E3B18F97E7E00C3B6A4 /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A5AA5E3218F97E7E00C3B6A4 /* Vila Mariana.gpx */; };
+		A5AA5E3E18F9B8CE00C3B6A4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AA5E3D18F9B8CE00C3B6A4 /* CoreLocation.framework */; };
 		A5B8C80118F09176001F8E7A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B8C80018F09176001F8E7A /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B3F9AC0B78843588D45DDA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A593984718E6F10600B30E59 /* ContatosIP67.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A593984A18E6F10600B30E59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A593984C18E6F10600B30E59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -34,8 +47,6 @@
 		A593985818E6F10600B30E59 /* ContatosIP67-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ContatosIP67-Prefix.pch"; sourceTree = "<group>"; };
 		A593985918E6F10600B30E59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A593985A18E6F10600B30E59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A593985C18E6F10600B30E59 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		A593985E18E6F10600B30E59 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A593986018E6F10600B30E59 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A593986718E6F51C00B30E59 /* FormularioContatoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormularioContatoViewController.h; path = ../FormularioContatoViewController.h; sourceTree = "<group>"; };
 		A593986818E6F51C00B30E59 /* FormularioContatoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormularioContatoViewController.m; path = ../FormularioContatoViewController.m; sourceTree = "<group>"; };
@@ -44,8 +55,23 @@
 		A593986D18E70A7400B30E59 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
 		A593986F18E73F7700B30E59 /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
 		A593987018E73F7700B30E59 /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
+		A5AA5E2318F976CB00C3B6A4 /* ContatosNoMapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContatosNoMapaViewController.h; sourceTree = "<group>"; };
+		A5AA5E2418F976CB00C3B6A4 /* ContatosNoMapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContatosNoMapaViewController.m; sourceTree = "<group>"; };
+		A5AA5E2518F976CB00C3B6A4 /* ContatosNoMapaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContatosNoMapaViewController.xib; sourceTree = "<group>"; };
+		A5AA5E2818F977AB00C3B6A4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A5AA5E2A18F97E7E00C3B6A4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A5AA5E2B18F97E7E00C3B6A4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A5AA5E2C18F97E7E00C3B6A4 /* gps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gps.png; sourceTree = "<group>"; };
+		A5AA5E2D18F97E7E00C3B6A4 /* gps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gps@2x.png"; sourceTree = "<group>"; };
+		A5AA5E2E18F97E7E00C3B6A4 /* lista-contatos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lista-contatos.png"; sourceTree = "<group>"; };
+		A5AA5E2F18F97E7E00C3B6A4 /* lista-contatos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lista-contatos@2x.png"; sourceTree = "<group>"; };
+		A5AA5E3018F97E7E00C3B6A4 /* mapa-contatos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapa-contatos.png"; sourceTree = "<group>"; };
+		A5AA5E3118F97E7E00C3B6A4 /* mapa-contatos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapa-contatos@2x.png"; sourceTree = "<group>"; };
+		A5AA5E3218F97E7E00C3B6A4 /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Vila Mariana.gpx"; sourceTree = "<group>"; };
+		A5AA5E3D18F9B8CE00C3B6A4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A5B8C7FF18F06A79001F8E7A /* FormularioContatoViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormularioContatoViewControllerDelegate.h; sourceTree = SOURCE_ROOT; };
 		A5B8C80018F09176001F8E7A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		CADD664416374FBAA3426E59 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +79,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AA5E3E18F9B8CE00C3B6A4 /* CoreLocation.framework in Frameworks */,
+				A5AA5E2918F977AB00C3B6A4 /* MapKit.framework in Frameworks */,
 				A5B8C80118F09176001F8E7A /* MessageUI.framework in Frameworks */,
 				A593984B18E6F10600B30E59 /* UIKit.framework in Frameworks */,
 				A593984D18E6F10600B30E59 /* Foundation.framework in Frameworks */,
 				A593984F18E6F10600B30E59 /* CoreGraphics.framework in Frameworks */,
+				1CD27B5177174DE7830653FA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,10 +95,13 @@
 		A593983E18E6F10600B30E59 = {
 			isa = PBXGroup;
 			children = (
+				A5AA5E3D18F9B8CE00C3B6A4 /* CoreLocation.framework */,
+				A5AA5E2818F977AB00C3B6A4 /* MapKit.framework */,
 				A5B8C80018F09176001F8E7A /* MessageUI.framework */,
 				A593985018E6F10600B30E59 /* ContatosIP67 */,
 				A593984918E6F10600B30E59 /* Frameworks */,
 				A593984818E6F10600B30E59 /* Products */,
+				7B3F9AC0B78843588D45DDA7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +119,7 @@
 				A593984A18E6F10600B30E59 /* UIKit.framework */,
 				A593984C18E6F10600B30E59 /* Foundation.framework */,
 				A593984E18E6F10600B30E59 /* CoreGraphics.framework */,
+				CADD664416374FBAA3426E59 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,8 +135,12 @@
 				A593986918E6F51C00B30E59 /* FormularioContatoViewController.xib */,
 				A593986C18E70A7400B30E59 /* Contato.h */,
 				A593986D18E70A7400B30E59 /* Contato.m */,
+				A5AA5E2318F976CB00C3B6A4 /* ContatosNoMapaViewController.h */,
+				A5AA5E2418F976CB00C3B6A4 /* ContatosNoMapaViewController.m */,
+				A5AA5E2518F976CB00C3B6A4 /* ContatosNoMapaViewController.xib */,
 				A593985918E6F10600B30E59 /* AppDelegate.h */,
 				A593985A18E6F10600B30E59 /* AppDelegate.m */,
+				A5AA5E3C18F97EA400C3B6A4 /* Images */,
 				A593985118E6F10600B30E59 /* Supporting Files */,
 			);
 			path = ContatosIP67;
@@ -112,15 +149,29 @@
 		A593985118E6F10600B30E59 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5AA5E3218F97E7E00C3B6A4 /* Vila Mariana.gpx */,
 				A593985218E6F10600B30E59 /* ContatosIP67-Info.plist */,
 				A593985318E6F10600B30E59 /* InfoPlist.strings */,
 				A593985618E6F10600B30E59 /* main.m */,
 				A593985818E6F10600B30E59 /* ContatosIP67-Prefix.pch */,
-				A593985C18E6F10600B30E59 /* Default.png */,
-				A593985E18E6F10600B30E59 /* Default@2x.png */,
-				A593986018E6F10600B30E59 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5AA5E3C18F97EA400C3B6A4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A593986018E6F10600B30E59 /* Default-568h@2x.png */,
+				A5AA5E2A18F97E7E00C3B6A4 /* Default.png */,
+				A5AA5E2B18F97E7E00C3B6A4 /* Default@2x.png */,
+				A5AA5E2C18F97E7E00C3B6A4 /* gps.png */,
+				A5AA5E2D18F97E7E00C3B6A4 /* gps@2x.png */,
+				A5AA5E2E18F97E7E00C3B6A4 /* lista-contatos.png */,
+				A5AA5E2F18F97E7E00C3B6A4 /* lista-contatos@2x.png */,
+				A5AA5E3018F97E7E00C3B6A4 /* mapa-contatos.png */,
+				A5AA5E3118F97E7E00C3B6A4 /* mapa-contatos@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A593986418E6F10600B30E59 /* Build configuration list for PBXNativeTarget "ContatosIP67" */;
 			buildPhases = (
+				C26962DE12C1443B8284BF9D /* Check Pods Manifest.lock */,
 				A593984318E6F10600B30E59 /* Sources */,
 				A593984418E6F10600B30E59 /* Frameworks */,
 				A593984518E6F10600B30E59 /* Resources */,
+				74119087638E45109D4DF063 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,14 +228,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				A593985518E6F10600B30E59 /* InfoPlist.strings in Resources */,
-				A593985D18E6F10600B30E59 /* Default.png in Resources */,
-				A593985F18E6F10600B30E59 /* Default@2x.png in Resources */,
 				A593986118E6F10600B30E59 /* Default-568h@2x.png in Resources */,
 				A593986B18E6F51C00B30E59 /* FormularioContatoViewController.xib in Resources */,
+				A5AA5E2718F976CB00C3B6A4 /* ContatosNoMapaViewController.xib in Resources */,
+				A5AA5E3318F97E7E00C3B6A4 /* Default.png in Resources */,
+				A5AA5E3418F97E7E00C3B6A4 /* Default@2x.png in Resources */,
+				A5AA5E3518F97E7E00C3B6A4 /* gps.png in Resources */,
+				A5AA5E3618F97E7E00C3B6A4 /* gps@2x.png in Resources */,
+				A5AA5E3718F97E7E00C3B6A4 /* lista-contatos.png in Resources */,
+				A5AA5E3818F97E7E00C3B6A4 /* lista-contatos@2x.png in Resources */,
+				A5AA5E3918F97E7E00C3B6A4 /* mapa-contatos.png in Resources */,
+				A5AA5E3A18F97E7E00C3B6A4 /* mapa-contatos@2x.png in Resources */,
+				A5AA5E3B18F97E7E00C3B6A4 /* Vila Mariana.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74119087638E45109D4DF063 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C26962DE12C1443B8284BF9D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A593984318E6F10600B30E59 /* Sources */ = {
@@ -194,6 +288,7 @@
 				A593986A18E6F51C00B30E59 /* FormularioContatoViewController.m in Sources */,
 				A593986E18E70A7400B30E59 /* Contato.m in Sources */,
 				A593987118E73F7700B30E59 /* ListaContatosViewController.m in Sources */,
+				A5AA5E2618F976CB00C3B6A4 /* ContatosNoMapaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +364,7 @@
 		};
 		A593986518E6F10600B30E59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B3F9AC0B78843588D45DDA7 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ContatosIP67/ContatosIP67-Prefix.pch";
@@ -280,6 +376,7 @@
 		};
 		A593986618E6F10600B30E59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B3F9AC0B78843588D45DDA7 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ContatosIP67/ContatosIP67-Prefix.pch";
