@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9949719A7B0B42A792109304 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC046C18A90D4BDA8D5811F4 /* libPods.a */; };
 		A57A1004190C2552009D67E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57A1003190C2552009D67E2 /* UIKit.framework */; };
 		A57A1006190C2552009D67E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57A1005190C2552009D67E2 /* Foundation.framework */; };
 		A57A1008190C2552009D67E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57A1007190C2552009D67E2 /* CoreGraphics.framework */; };
@@ -16,6 +17,7 @@
 		A57A1016190C2552009D67E2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A57A1015190C2552009D67E2 /* Default.png */; };
 		A57A1018190C2552009D67E2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57A1017190C2552009D67E2 /* Default@2x.png */; };
 		A57A101A190C2552009D67E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A57A1019190C2552009D67E2 /* Default-568h@2x.png */; };
+		A57A1022190C2ECF009D67E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57A1021190C2ECF009D67E2 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		A57A1015190C2552009D67E2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A57A1017190C2552009D67E2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A57A1019190C2552009D67E2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A57A1020190C2ECF009D67E2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A57A1021190C2ECF009D67E2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DC046C18A90D4BDA8D5811F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1712E41D7934196BE6311FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,7 @@
 				A57A1004190C2552009D67E2 /* UIKit.framework in Frameworks */,
 				A57A1006190C2552009D67E2 /* Foundation.framework in Frameworks */,
 				A57A1008190C2552009D67E2 /* CoreGraphics.framework in Frameworks */,
+				9949719A7B0B42A792109304 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +58,12 @@
 		A57A0FF7190C2552009D67E2 = {
 			isa = PBXGroup;
 			children = (
+				A57A1020190C2ECF009D67E2 /* ViewController.h */,
+				A57A1021190C2ECF009D67E2 /* ViewController.m */,
 				A57A1009190C2552009D67E2 /* WebServices */,
 				A57A1002190C2552009D67E2 /* Frameworks */,
 				A57A1001190C2552009D67E2 /* Products */,
+				E1712E41D7934196BE6311FA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +81,7 @@
 				A57A1003190C2552009D67E2 /* UIKit.framework */,
 				A57A1005190C2552009D67E2 /* Foundation.framework */,
 				A57A1007190C2552009D67E2 /* CoreGraphics.framework */,
+				DC046C18A90D4BDA8D5811F4 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57A101D190C2552009D67E2 /* Build configuration list for PBXNativeTarget "WebServices" */;
 			buildPhases = (
+				BEF42AC9299B4376BF6145E3 /* Check Pods Manifest.lock */,
 				A57A0FFC190C2552009D67E2 /* Sources */,
 				A57A0FFD190C2552009D67E2 /* Frameworks */,
 				A57A0FFE190C2552009D67E2 /* Resources */,
+				234BB825D3FE41D2BE00E24F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +172,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		234BB825D3FE41D2BE00E24F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEF42AC9299B4376BF6145E3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A57A0FFC190C2552009D67E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -166,6 +212,7 @@
 			files = (
 				A57A1010190C2552009D67E2 /* main.m in Sources */,
 				A57A1014190C2552009D67E2 /* AppDelegate.m in Sources */,
+				A57A1022190C2ECF009D67E2 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +288,7 @@
 		};
 		A57A101E190C2552009D67E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1712E41D7934196BE6311FA /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebServices/WebServices-Prefix.pch";
@@ -252,6 +300,7 @@
 		};
 		A57A101F190C2552009D67E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1712E41D7934196BE6311FA /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebServices/WebServices-Prefix.pch";
@@ -280,6 +329,7 @@
 				A57A101F190C2552009D67E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
