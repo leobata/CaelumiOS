@@ -71,7 +71,7 @@
 - (Contato *)pegaDadosDoFormulario
 {
     if(!self.contato){
-        self.contato = [[Contato alloc] init];
+        self.contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato" inManagedObjectContext:self.context];
     }
     self.contato.nome = self.nome.text;
     self.contato.endereco = self.endereco.text;

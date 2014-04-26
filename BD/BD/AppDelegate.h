@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  ContatosIP67
+//  BD
 //
-//  Created by ios4341 on 29/03/14.
+//  Created by ios4341 on 26/04/14.
 //  Copyright (c) 2014 Caelum. All rights reserved.
 //
 
@@ -11,13 +11,12 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, atomic) NSMutableArray *contatos;
-@property (strong, atomic) NSString *nomeArquivo;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end

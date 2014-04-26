@@ -31,6 +31,7 @@
     FormularioContatoViewController *form = [[FormularioContatoViewController alloc] init];
     //form.contatos = self.contatos;
     form.delegate = self;
+    form.context = self.context;
     [self.navigationController pushViewController:form animated:YES];
 }
 
@@ -66,7 +67,9 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(editingStyle == UITableViewCellEditingStyleDelete){
+        Contato *contato = self.contatos[indexPath.row];
         [self.contatos removeObjectAtIndex:indexPath.row];
+        [self.context deleteObject:contato];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
 }
@@ -101,9 +104,11 @@
 {
     [super viewDidAppear:animated];
     
-    NSIndexPath *_indexPath = [NSIndexPath indexPathForRow:self.linhaSelecionada inSection:0];
-    [self.tableView selectRowAtIndexPath:_indexPath animated:animated scrollPosition:UITableViewScrollPositionMiddle];
-    self.linhaSelecionada = -1;
+    if (self.linhaSelecionada > -1) {
+        NSIndexPath *_indexPath = [NSIndexPath indexPathForRow:self.linhaSelecionada inSection:0];
+        [self.tableView selectRowAtIndexPath:_indexPath animated:animated scrollPosition:UITableViewScrollPositionMiddle];
+        self.linhaSelecionada = -1;
+    }
 }
 
 -(void)viewDidLoad

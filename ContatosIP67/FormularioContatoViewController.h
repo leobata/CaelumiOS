@@ -26,6 +26,7 @@
 @property (weak, atomic) id<FormularioContatoViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *botaoFoto;
 @property (weak, nonatomic) IBOutlet UIButton *botaoLocation;
+@property (weak, nonatomic) NSManagedObjectContext *context;
 - (Contato *)pegaDadosDoFormulario;
 -(IBAction)buscarCoordenadas:(id)sender;
 - (id)initWithContato:(Contato *)contato;

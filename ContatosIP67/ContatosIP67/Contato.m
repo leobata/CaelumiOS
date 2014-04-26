@@ -9,6 +9,9 @@
 #import "Contato.h"
 
 @implementation Contato
+
+@dynamic nome, telefone, site, endereco, email, foto, latitude, longitude;
+
 -(NSString *) description
 {
     return [NSString stringWithFormat:@"%@ <%@>", self.nome, self.email];

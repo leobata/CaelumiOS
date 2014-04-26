@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1CD27B5177174DE7830653FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADD664416374FBAA3426E59 /* libPods.a */; };
+		A57A0FC6190BE55C009D67E2 /* Contatos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57A0FC4190BE55C009D67E2 /* Contatos.xcdatamodeld */; };
+		A57A0FF6190BF0BF009D67E2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57A0FF5190BF0BF009D67E2 /* CoreData.framework */; };
 		A593984B18E6F10600B30E59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A593984A18E6F10600B30E59 /* UIKit.framework */; };
 		A593984D18E6F10600B30E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A593984C18E6F10600B30E59 /* Foundation.framework */; };
 		A593984F18E6F10600B30E59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A593984E18E6F10600B30E59 /* CoreGraphics.framework */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		7B3F9AC0B78843588D45DDA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A57A0FC5190BE55C009D67E2 /* Contatos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contatos.xcdatamodel; sourceTree = "<group>"; };
+		A57A0FF5190BF0BF009D67E2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A593984718E6F10600B30E59 /* ContatosIP67.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A593984A18E6F10600B30E59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A593984C18E6F10600B30E59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57A0FF6190BF0BF009D67E2 /* CoreData.framework in Frameworks */,
 				A5AA5E3E18F9B8CE00C3B6A4 /* CoreLocation.framework in Frameworks */,
 				A5AA5E2918F977AB00C3B6A4 /* MapKit.framework in Frameworks */,
 				A5B8C80118F09176001F8E7A /* MessageUI.framework in Frameworks */,
@@ -92,9 +97,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A57A0FC1190BE49F009D67E2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				A57A0FC4190BE55C009D67E2 /* Contatos.xcdatamodeld */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
 		A593983E18E6F10600B30E59 = {
 			isa = PBXGroup;
 			children = (
+				A57A0FF5190BF0BF009D67E2 /* CoreData.framework */,
+				A57A0FC1190BE49F009D67E2 /* Persistence */,
 				A5AA5E3D18F9B8CE00C3B6A4 /* CoreLocation.framework */,
 				A5AA5E2818F977AB00C3B6A4 /* MapKit.framework */,
 				A5B8C80018F09176001F8E7A /* MessageUI.framework */,
@@ -289,6 +304,7 @@
 				A593986E18E70A7400B30E59 /* Contato.m in Sources */,
 				A593987118E73F7700B30E59 /* ListaContatosViewController.m in Sources */,
 				A5AA5E2618F976CB00C3B6A4 /* ContatosNoMapaViewController.m in Sources */,
+				A57A0FC6190BE55C009D67E2 /* Contatos.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +424,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A57A0FC4190BE55C009D67E2 /* Contatos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A57A0FC5190BE55C009D67E2 /* Contatos.xcdatamodel */,
+			);
+			currentVersion = A57A0FC5190BE55C009D67E2 /* Contatos.xcdatamodel */;
+			path = Contatos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A593983F18E6F10600B30E59 /* Project object */;
 }

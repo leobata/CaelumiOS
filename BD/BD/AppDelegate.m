@@ -1,14 +1,12 @@
 //
 //  AppDelegate.m
-//  ContatosIP67
+//  BD
 //
-//  Created by ios4341 on 29/03/14.
+//  Created by ios4341 on 26/04/14.
 //  Copyright (c) 2014 Caelum. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "ListaContatosViewController.h"
-#import "ContatosNoMapaViewController.h"
 
 @implementation AppDelegate
 
@@ -18,31 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //NSArray *docDirs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    //NSString *docDir = docDirs[0];
-    //self.nomeArquivo = [NSString stringWithFormat:@"%@/Contatos",docDir];
-    
-    //self.contatos = [NSKeyedUnarchiver unarchiveObjectWithFile:self.nomeArquivo];
-    [self criarContato];
-    self.contatos = [self buscarContatos];
-    
-    if(!self.contatos){
-        self.contatos = [[NSMutableArray alloc] init];
-    }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    ListaContatosViewController *lista = [[ListaContatosViewController alloc] init];
-    lista.contatos = self.contatos;
-    lista.context = self.managedObjectContext;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
-    
-    ContatosNoMapaViewController *mapa = [[ContatosNoMapaViewController alloc] init];
-    mapa.contatos = self.contatos;
-    UINavigationController *navMapa = [[UINavigationController alloc] initWithRootViewController:mapa];
-    
-    UITabBarController *tabController = [[UITabBarController alloc] init];
-    tabController.viewControllers = @[nav,navMapa];
-    self.window.rootViewController = tabController;
+    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -56,10 +31,6 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    //[NSKeyedArchiver archiveRootObject:self.contatos toFile:self.nomeArquivo];
-    
-    [self saveContext];
-    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -76,7 +47,8 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // Saves changes in the application's managed object context before the application terminates.
+    [self saveContext];
 }
 
 - (void)saveContext
@@ -85,11 +57,11 @@
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+             // Replace this implementation with code to handle the error appropriately.
+             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
-        }
+        } 
     }
 }
 
@@ -118,7 +90,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Contatos" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"BD" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -131,7 +103,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Contatos.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"BD.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -139,7 +111,7 @@
         /*
          Replace this implementation with code to handle the error appropriately.
          
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
          
          Typical reasons for an error here include:
          * The persistent store is not accessible;
@@ -161,7 +133,7 @@
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
-    }
+    }    
     
     return _persistentStoreCoordinator;
 }
@@ -172,42 +144,6 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
-
--(void)criarContato
-{
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    
-    BOOL jaExecutou = [ud boolForKey:@"br.com.caelum.ContatosIP67.config.ja_executou"];
-    
-    if (!jaExecutou) {
-        Contato *contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato" inManagedObjectContext:self.managedObjectContext];
-        contato.nome = @"Caelum - SP";
-        contato.telefone = @"01155712751";
-        contato.email = @"contato@caelum.com.br";
-        contato.endereco = @"São Paulo, SP, Rua Vergueiro, 3185";
-        contato.site = @"http://www.caelum.com.br";
-        contato.latitude = @(-23.5883034);
-        contato.longitude = @(-46.632369);
-        
-        [self saveContext];
-        [ud setBool:YES forKey:@"br.com.caelum.ContatosIP67.config.ja_executou"];
-        [ud synchronize];
-    }
-    
-}
-
--(NSMutableArray*)buscarContatos
-{
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Contato"];
-    
-    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES];
-    
-    [request setSortDescriptors:@[sd]];
-    
-    NSArray *contatosI = [self.managedObjectContext executeFetchRequest:request error:nil];
-    
-    return [contatosI mutableCopy];
 }
 
 @end

@@ -16,6 +16,7 @@
     Contato *contatoSelecionado;
 }
 
+@property (weak, nonatomic) NSManagedObjectContext *context;
 @property (weak, atomic) NSMutableArray *contatos;
 @property (assign, atomic) NSInteger linhaSelecionada;
 -(void)contatoAdicionado:(Contato *)contato;
