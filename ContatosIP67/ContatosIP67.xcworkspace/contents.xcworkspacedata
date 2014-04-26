@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../WebServices/WebServices.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ContatosIP67.xcodeproj">
    </FileRef>
    <FileRef
