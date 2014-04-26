@@ -86,8 +86,13 @@
 {
     NSMutableURLRequest *req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://api.kivaws.org/v1/loans/search.json?status=fundraising" parameters:nil error:nil];
     
+    [req setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+    
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
     op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op.responseSerializer setAcceptableContentTypes:[NSSet setWithObject:@"application/json"]];
+    
+    // PROJETO COMPLETO EM: http://bitbucket.org/osnicaelum/webservices
     
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation * operation, id response){
         NSDictionary *res = (NSDictionary*) response;
